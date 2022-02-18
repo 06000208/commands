@@ -1,0 +1,45 @@
+{
+  "name": "@a06000208/commands",
+  "version": "0.0.1",
+  "description": "Extendable javascript command system",
+  "scripts": {
+    "test": "echo \"Error: no tests\" && exit 1",
+    "lint": "eslint . --ext .js,.mjs,.cjs",
+    "fix": "eslint . --ext .js,.mjs,.cjs --fix",
+    "dev": "node esbuild.config.js",
+    "build": "node esbuild.config.js --production",
+    "docs": "jsdoc --template \"./node_modules/boxy-jsdoc-template\" --configure .jsdoc.conf.json",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/06000208/commands.git"
+  },
+  "author": "06000208",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/06000208/commands/issues"
+  },
+  "homepage": "https://github.com/06000208/commands#readme",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "browser": "./dist/index.browser.min.js",
+  "unpkg": "./dist/index.browser.min.js",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=16.9.0"
+  },
+  "devDependencies": {
+    "boxy-jsdoc-template": "^2.0.2",
+    "esbuild": "^0.14.21",
+    "eslint": "^8.8.0"
+  }
+}
