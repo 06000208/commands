@@ -9,6 +9,7 @@
     "dev": "node esbuild.config.js",
     "build": "node esbuild.config.js --production",
     "docs": "jsdoc --template \"./node_modules/boxy-jsdoc-template\" --configure .jsdoc.conf.json",
+    "refresh-handler": "npm uninstall @a06000208/handler && npm install github:06000208/handler",
     "prepare": "npm run build"
   },
   "repository": {
@@ -22,20 +23,25 @@
   },
   "homepage": "https://github.com/06000208/commands#readme",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "module": "./src/index.js",
   "browser": "./dist/index.browser.min.js",
   "unpkg": "./dist/index.browser.min.js",
   "exports": {
-    "import": "./dist/index.js",
+    "import": "./src/index.js",
     "require": "./dist/index.cjs"
   },
   "type": "module",
   "sideEffects": false,
   "engines": {
     "node": ">=16.9.0"
+  },
+  "dependencies": {
+    "@a06000208/handler": "github:06000208/handler",
+    "@discordjs/collection": "^0.5.0"
   },
   "devDependencies": {
     "boxy-jsdoc-template": "^2.0.2",
