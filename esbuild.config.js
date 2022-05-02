@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { build } from "esbuild";
-import process from "process";
 import console from "node:console";
-import { readFileSync } from "fs";
+import { URL } from "node:url";
+import process from "node:process";
+import { readFileSync } from "node:fs";
+import { build } from "esbuild";
 
 // eslint-disable-next-line no-undef
 const { dependencies } = JSON.parse(readFileSync(new URL("./package.json", import.meta.url)));
