@@ -26,7 +26,7 @@
     "dist",
     "src"
   ],
-  "main": "./dist/index.cjs",
+  "main": "./src/index.js",
   "module": "./src/index.js",
   "browser": "./dist/index.browser.min.js",
   "unpkg": "./dist/index.browser.min.js",
