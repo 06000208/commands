@@ -4,5 +4,5 @@
         "moduleResolution": "node",
         "module": "ES2020",
     },
-    "include": ["src"],
+    "include": ["src/**/*"],
 }
