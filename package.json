@@ -33,6 +33,7 @@
   "browser": "./dist/index.browser.min.js",
   "unpkg": "./dist/index.browser.min.js",
   "exports": {
+    "types": "./dist/index.d.ts",
     "import": "./src/index.js",
     "require": "./dist/index.cjs"
   },
