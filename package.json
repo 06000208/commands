@@ -2,16 +2,6 @@
   "name": "@a06000208/commands",
   "version": "0.0.1",
   "description": "Extendable javascript command system",
-  "scripts": {
-    "test": "echo \"Error: no tests\" && exit 1",
-    "lint": "eslint . --ext .js,.mjs,.cjs",
-    "fix": "eslint . --ext .js,.mjs,.cjs --fix",
-    "dev": "node esbuild.config.js",
-    "build": "node esbuild.config.js --production",
-    "docs": "jsdoc --template \"./node_modules/boxy-jsdoc-template\" --configure .jsdoc.conf.json",
-    "refresh-handler": "npm uninstall @a06000208/handler && npm install github:06000208/handler",
-    "prepare": "npm run build"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/06000208/commands.git"
@@ -22,10 +12,22 @@
     "url": "https://github.com/06000208/commands/issues"
   },
   "homepage": "https://github.com/06000208/commands#readme",
+  "scripts": {
+    "test": "echo \"Error: no tests\" && exit 1",
+    "lint": "eslint . --ext .js,.mjs,.cjs",
+    "fix": "eslint . --ext .js,.mjs,.cjs --fix",
+    "dev": "node esbuild.config.js",
+    "build": "node esbuild.config.js --production && npx tsc",
+    "docs": "jsdoc --template \"./node_modules/boxy-jsdoc-template\" --configure .jsdoc.conf.json",
+    "refresh-handler": "npm uninstall @a06000208/handler && npm install github:06000208/handler",
+    "prepare": "npm run build"
+  },
   "files": [
     "dist",
     "src"
   ],
+  "type": "module",
+  "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
   "module": "./src/index.js",
   "browser": "./dist/index.browser.min.js",
@@ -34,7 +36,6 @@
     "import": "./src/index.js",
     "require": "./dist/index.cjs"
   },
-  "type": "module",
   "sideEffects": false,
   "engines": {
     "node": ">=16.9.0"
@@ -46,6 +47,7 @@
   "devDependencies": {
     "boxy-jsdoc-template": "^2.0.2",
     "esbuild": "^0.15.12",
-    "eslint": "^8.8.0"
+    "eslint": "^8.8.0",
+    "typescript": "^4.8.4"
   }
 }
